@@ -1,15 +1,15 @@
 <br>
 <br>
-<form method="post" action="/users/create" accept-charset="UTF-8">
+<form method="post" action="/users" accept-charset="UTF-8" data-remote="true">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <label for="fname">User name:</label>
-  <input type="text" id="fname" name="fname"><br>
+  <label for="username">User name:</label>
+  <input type="text" id="username" name="user[username]"><br>
   <br>
   <label for="email">Email</label>
-  <input type="email" id="email" name="email"><br>
+  <input type="email" id="email" name="user[email]"><br>
   <br>
   <label for="password">Password</label>
-  <input type="password" id="password" name="password"><br>
+  <input type="password" id="password" name="user[password]"><br>
   <br>
-  <input type="submit" value="Submit">
+  <input type="submit" value="Create">
 </form>
