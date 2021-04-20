@@ -1,1 +1,15 @@
-<h1>Hello, Rails!</h1>
+<br>
+<br>
+<form method="post" action="/users/create" accept-charset="UTF-8">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label for="fname">User name:</label>
+  <input type="text" id="fname" name="fname"><br>
+  <br>
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email"><br>
+  <br>
+  <label for="password">Password</label>
+  <input type="password" id="password" name="password"><br>
+  <br>
+  <input type="submit" value="Submit">
+</form>
