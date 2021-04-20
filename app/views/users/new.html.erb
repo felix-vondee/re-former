@@ -1,18 +1,32 @@
-<br>
-<br>
-<%= form_tag("/users", method: "post") do %>
-  <%= label_tag(:username, "Username:") %>
-  <%= text_field_tag(:username) %>
-  <br>
-  <br>
-   <%= label_tag(:email, "email:") %>
-  <%= text_field_tag(:email) %>
-  <br>
-  <br>
-   <%= label_tag(:password, "password:") %>
-  <%= text_field_tag(:password) %>
-  <br>
-  <br>
-  <%= submit_tag("Create") %>
-<% end %>
-
+<%# <br>
+<br> %>
+<%#= form_tag("/users", method: "post") do %>
+  <%# <%= label_tag(:username, "Username:") %>
+  <%#= text_field_tag(:username) %>
+  <%# <br>
+  <br> %>
+  <%# <%= label_tag(:email, "email:") %>
+  <%#= text_field_tag(:email) %>
+  <%# <br>
+  <br> %>
+  <%#= label_tag(:password, "password:") %>
+  <%#= text_field_tag(:password) %>
+  <%# <br>
+  <br> %>
+  <%#= submit_tag("Create") %>
+  <%# end %>
+  <%= form_with model: @user do |user| %>
+    <%= label_tag(:username, "Username") %>
+    <%= user.text_field :username, placeholder: "Your user name here" %>
+    <br>
+    <br>
+    <%= label_tag(:email, "Email") %>
+    <%= user.text_field :email, placeholder: "example@example.com" %>
+    <br>
+    <br>
+    <%= label_tag(:password, "Password") %>
+    <%= user.password_field :password %>
+    <br>
+    <br>
+    <%= user.submit "Create" %>
+  <% end %>
